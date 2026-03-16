@@ -58,7 +58,7 @@ or game.PlaceId == 109185433585492 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/placeholder14331/DWSCRIPT/refs/heads/main/AWP%20Legacy%20DW"))()
 
 elseif game.PlaceId == 443406476 then
-    loadstring(game:HttpGet("https://vss.pandadevelopment.net/virtual/file/10bf82a7c63e4689"))()
+    loadstring(game:HttpGet("https://vss.pandadevelopment.net/virtual/file/bd07301457b44fbc"))()
 
 else
     notify("Wrong game", "Script Won't load: Wrong PlaceID")
