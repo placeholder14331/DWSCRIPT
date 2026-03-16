@@ -48,14 +48,14 @@ or game.PlaceId == 72144869714561
 or game.PlaceId == 112060227074307 then
     if isVelocity then
         notify("Velocity Detected", "Loading Velocity supported version..", "rbxassetid://71535806157902")
-        loadstring(game:HttpGet("https://vss.pandadevelopment.net/virtual/file/243ed0435ba44a7b"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/placeholder14331/DWSCRIPT/refs/heads/main/AWP%20Velocity"))()
     else
-        loadstring(game:HttpGet("https://vss.pandadevelopment.net/virtual/file/7cebe281272243cf"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/placeholder14331/DWSCRIPT/refs/heads/main/AWP%20DW"))()
     end
 
 elseif game.PlaceId == 114931763326993
 or game.PlaceId == 109185433585492 then
-    loadstring(game:HttpGet("https://vss.pandadevelopment.net/virtual/file/d884d6b7a497464c"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/placeholder14331/DWSCRIPT/refs/heads/main/AWP%20Legacy%20DW"))()
 
 elseif game.PlaceId == 443406476 then
     loadstring(game:HttpGet("https://vss.pandadevelopment.net/virtual/file/10bf82a7c63e4689"))()
