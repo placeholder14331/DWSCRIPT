@@ -1,0 +1,65 @@
+local StarterGui = game:GetService("StarterGui")
+
+local function getExecutor()
+	local name = "unknown"
+	pcall(function()
+	if identifyexecutor then name = identifyexecutor()
+elseif getexecutorname then name = getexecutorname() end
+end)
+	return string.lower(tostring(name))
+end
+
+local executor = getExecutor()
+
+if executor:find("xeno", 1, true) or executor:find("solara", 1, true) then
+	repeat task.wait() until game:IsLoaded()
+		pcall(function()
+		StarterGui:SetCore("SendNotification", {
+		Title = "Script couldn't load",
+		Text = "Your executor is not supported",
+		Duration = 5,
+		})
+	end)
+	return
+end
+
+local function notify(title, text, icon)
+    pcall(function()
+        StarterGui:SetCore("SendNotification", {
+            Title = title,
+            Text = text,
+            Duration = 5,
+            Icon = icon
+        })
+    end)
+end
+
+local function getExecutor()
+    if identifyexecutor then return identifyexecutor():lower() end
+    if getexecutorname then return getexecutorname():lower() end
+    return "unknown"
+end
+
+local executor = getExecutor()
+local isVelocity = executor:find("velocity") ~= nil
+
+if game.PlaceId == 13438553315
+or game.PlaceId == 72144869714561
+or game.PlaceId == 112060227074307 then
+    if isVelocity then
+        notify("Velocity Detected", "Loading Velocity supported version..", "rbxassetid://71535806157902")
+        loadstring(game:HttpGet("https://vss.pandadevelopment.net/virtual/file/243ed0435ba44a7b"))()
+    else
+        loadstring(game:HttpGet("https://vss.pandadevelopment.net/virtual/file/7cebe281272243cf"))()
+    end
+
+elseif game.PlaceId == 114931763326993
+or game.PlaceId == 109185433585492 then
+    loadstring(game:HttpGet("https://vss.pandadevelopment.net/virtual/file/d884d6b7a497464c"))()
+
+elseif game.PlaceId == 443406476 then
+    loadstring(game:HttpGet("https://vss.pandadevelopment.net/virtual/file/10bf82a7c63e4689"))()
+
+else
+    notify("Wrong game", "Script Won't load: Wrong PlaceID")
+end
