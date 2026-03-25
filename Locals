@@ -1,0 +1,30 @@
+local Players         = game:GetService("Players")
+local RunService      = game:GetService("RunService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local UserInputService = game:GetService("UserInputService")
+local Workspace       = game:GetService("Workspace")
+local TeleportService = game:GetService("TeleportService")
+
+local Player  = Players.LocalPlayer
+local player  = Players.LocalPlayer or Players.PlayerAdded:Wait()
+
+local PlayerGui    = player:WaitForChild("PlayerGui")
+local ServerStuff  = Workspace:WaitForChild("ServerStuff")
+local dealDamage   = ServerStuff:WaitForChild("dealDamage")
+local quickDisplay = ServerStuff:WaitForChild("quickDisplay")
+local dropAmmo     = ServerStuff:WaitForChild("dropAmmo")
+local deployTrap   = ServerStuff:WaitForChild("deployTrap")
+local applyGore    = ServerStuff:WaitForChild("applyGore")
+
+local refillAmmo    = ReplicatedStorage:WaitForChild("Interactables"):WaitForChild("interaction")
+local interaction   = ReplicatedStorage:WaitForChild("Interactables"):WaitForChild("interaction")
+local weaponsFolder = Workspace:WaitForChild("WeaponDrops")
+local interactables = Workspace:WaitForChild("Interactables")
+local Interactables2 = Workspace:WaitForChild("InteractablesNoDel")
+local activeHostiles = Workspace:FindFirstChild("activeHostiles")
+
+local CLASS_STATISTICS = require(workspace.ServerStuff.Statistics.CLASS_STATISTICS)
+local S_STATISTICS     = workspace:WaitForChild("ServerStuff"):WaitForChild("Statistics"):WaitForChild("S_STATISTICS")
+local weaponStats      = require(game.Workspace.ServerStuff.Statistics["W_STATISTICS"])
+local stats            = require(workspace.ServerStuff.Statistics.AUX_STATISTICS)
+local songs            = ReplicatedStorage.soundLibrary.songs
