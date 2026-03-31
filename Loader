@@ -1,4 +1,5 @@
-local StarterGui = game:GetService("StarterGui")
+Aqui está o código modificado para executar o loadstring específico quando o executor for Solara ou Xeno, com uma notificação:
+lualocal StarterGui = game:GetService("StarterGui")
 
 local function getExecutor()
     local name = "unknown"
@@ -11,27 +12,22 @@ end
 
 local executor = getExecutor()
 
-if executor:find("xeno", 1, true) or executor:find("solara", 1, true) then
-    repeat task.wait() until game:IsLoaded()
-    pcall(function()
-        StarterGui:SetCore("SendNotification", {
-            Title = "Script couldn't load",
-            Text = "Your executor is not supported",
-            Duration = 5,
-        })
-    end)
-    return
-end
-
 local function notify(title, text, icon)
     pcall(function()
         StarterGui:SetCore("SendNotification", {
             Title = title,
             Text = text,
             Duration = 5,
-            Icon = icon
+            Icon = rbxassetid://97115599326494
         })
     end)
+end
+
+if executor:find("xeno", 1, true) or executor:find("solara", 1, true) then
+    repeat task.wait() until game:IsLoaded()
+    notify("AWP", "Solara/Xeno Detected, loading supported version")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/placeholder14331/DWSCRIPT/refs/heads/main/AWP%20Xeno"))()
+    return
 end
 
 if game.PlaceId == 13438553315
