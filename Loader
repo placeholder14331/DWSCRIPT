@@ -25,7 +25,7 @@ end
 if executor:find("xeno", 1, true) or executor:find("solara", 1, true) then
     repeat task.wait() until game:IsLoaded()
     notify("AWP", "Solara/Xeno Detected, loading supported version")
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/placeholder14331/DWSCRIPT/refs/heads/main/AWP%20Xeno"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/placeholder14331/DWSCRIPT/refs/heads/main/AWP%20Shit"))()
     return
 end
 
