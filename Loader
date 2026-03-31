@@ -17,7 +17,7 @@ local function notify(title, text, icon)
             Title = title,
             Text = text,
             Duration = 5,
-            Icon = rbxassetid://97115599326494
+            Icon = "rbxassetid://97115599326494"
         })
     end)
 end
