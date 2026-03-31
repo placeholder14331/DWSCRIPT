@@ -1,5 +1,4 @@
-Aqui está o código modificado para executar o loadstring específico quando o executor for Solara ou Xeno, com uma notificação:
-lualocal StarterGui = game:GetService("StarterGui")
+local StarterGui = game:GetService("StarterGui")
 
 local function getExecutor()
     local name = "unknown"
