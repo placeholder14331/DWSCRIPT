@@ -8,7 +8,6 @@ local function getExecutor()
     end)
     return string.lower(tostring(name))
 end
-
 local executor = getExecutor()
 
 local function notify(title, text, icon)
@@ -22,17 +21,19 @@ local function notify(title, text, icon)
     end)
 end
 
-if executor:find("xeno", 1, true) or executor:find("solara", 1, true) then
-    repeat task.wait() until game:IsLoaded()
-    notify("AWP", "Solara/Xeno Detected, loading supported version")
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/placeholder14331/DWSCRIPT/refs/heads/main/AWP%20Shit"))()
-    return
-end
+local isXeno = executor:find("xeno", 1, true)
+local isSolara = executor:find("solara", 1, true)
 
 if game.PlaceId == 13438553315
 or game.PlaceId == 72144869714561
 or game.PlaceId == 112060227074307 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/placeholder14331/DWSCRIPT/refs/heads/main/AWP%20DW"))()
+    if isXeno or isSolara then
+        repeat task.wait() until game:IsLoaded()
+        notify("AWP", "Solara/Xeno Detected, loading supported version")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/placeholder14331/DWSCRIPT/refs/heads/main/AWP%20Shit"))()
+    else
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/placeholder14331/DWSCRIPT/refs/heads/main/AWP%20DW"))()
+    end
 elseif game.PlaceId == 114931763326993
 or game.PlaceId == 109185433585492 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/placeholder14331/DWSCRIPT/refs/heads/main/AWP%20Legacy%20DW"))()
